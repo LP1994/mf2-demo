@@ -1,0 +1,9 @@
+# 项目排除路径
+
+/.idea/
+
+/001mf2-main/dist/
+/002upload-for-multiple/dist/
+
+/001mf2-main/node_modules/
+/002upload-for-multiple/node_modules/
