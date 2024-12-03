@@ -1,6 +1,4 @@
-<style
-  scoped
-  lang = 'scss'>
+<style scoped>
 .upload {
   box-sizing: border-box;
 
@@ -9,74 +7,46 @@
 
   padding-left: 20px;
   margin-bottom: 40px;
+}
 
-  > h3 {
-    width: 100%;
-    height: auto;
+.upload > h3 {
+  width: 100%;
+  height: auto;
 
-    color: blue;
+  color: blue;
 
-    line-height: 1;
-    text-align: left;
+  line-height: 1;
+  text-align: left;
 
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
+}
 
-  > section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+.upload > section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-    width: 100%;
-    height: 50px;
+  width: 100%;
+  height: 50px;
+}
 
-    > input[type='file'] {
-      width: 200px;
-      height: 100%;
-    }
+.upload > section > button {
+  box-sizing: border-box;
 
-    > input[type='file' i] {
-      display: inline-block !important;
-      height: 100% !important;
-      color: red;
+  width: 100px;
+  height: 100%;
 
-      &::-webkit-file-upload-button {
-        display: inline-block !important;
-        width: 80px !important;
-        height: 100% !important;
-        color: green;
+  color: black;
+  font-size: 20px;
 
-        padding: 0;
-        border: 1px solid palevioletred;
-        border-radius: 5px;
-        margin: 0 20px 0 0;
-        outline: none;
+  line-height: 48px;
+  text-align: center;
 
-        background-color: white;
-      }
-    }
+  border: 1px solid palevioletred;
+  border-radius: 10px;
+  margin-left: 40px;
 
-    > button {
-      box-sizing: border-box;
-
-      width: 100px;
-      height: 100%;
-
-      color: black;
-      font-size: 20px;
-
-      line-height: 48px;
-      text-align: center;
-
-      border: 1px solid palevioletred;
-      border-radius: 10px;
-      margin-left: 40px;
-
-      background-color: white;
-    }
-
-  }
-
+  background-color: white;
 }
 </style>
 <template>
@@ -98,55 +68,33 @@
 </template>
 <script
   setup
-  type = 'module'
-  lang = 'ts'>
+  type = 'module'>
 'use strict';
 
 import {
   onMounted,
 } from 'vue';
 
-// @ts-expect-error
-function UploadForMultiple( event: Event ): void{
-  const uploadForMultiple: HTMLInputElement = document.querySelector( '#UploadForMultiple' ) as HTMLInputElement,
-    files: FileList = uploadForMultiple.files as FileList;
+function UploadForMultiple( event ){
+  const uploadForMultiple = document.querySelector( '#UploadForMultiple' ),
+    files = uploadForMultiple.files;
 
   if( files.length !== 0 ){
     console.dir( files );
 
-    const formData: FormData = new FormData();
+    const formData = new FormData();
 
     formData.append( 'uploadType', 'multiple' );
 
-    Array.from( files ).forEach( ( file: File ): void => {
+    Array.from( files ).forEach( ( file ) => {
       formData.append( 'files', file, file.name );
     } );
 
-    fetch( `${ https4deno }/simulation_servers_deno/upload?uploadType=multiple&isForcedWrite=false`, {
-      body: formData,
-      cache: 'no-cache',
-      headers: {
-        Accept: 'application/json',
-      },
-      method: 'POST',
-      credentials: 'same-origin',
-      mode: 'same-origin',
-    } ).then(
-      async ( res: Response ): Promise<Response> => {
-        console.dir( await res.clone().json() );
-
-        return res;
-      },
-      ( reject: unknown ): void => {
-        console.error( reject );
-      },
-    ).catch( ( error: unknown ): void => {
-      console.error( error );
-    } );
+    console.dir( formData );
   }
 }
 
-onMounted( (): void => {
+onMounted( () => {
   console.log( `\n\n
 远端的Vue3组件“UploadForMultiple”的DOM已挂载。
 \n\n` );
