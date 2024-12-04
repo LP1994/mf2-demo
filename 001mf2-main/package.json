@@ -123,7 +123,18 @@
     "Opera >= 115"
   ],
   "scripts": {
-    "dev": ""
+    "dev": "webpack serve --color --profile --mode development --define-process-env-node-env development --config ./webpack.config.mjs"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@module-federation/enhanced": "^0.8.0",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "vue": "^3.5.13",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.97.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
 }
