@@ -81,17 +81,16 @@
 </style>
 <template>
   <article class = 'css-reset upload'>
-    <h3 class = 'css-reset'>FormData的多文件上传（uploadType=multiple）：</h3>
+    <h3 class = 'css-reset'>FormData的单文件上传（uploadType=single）：</h3>
     <section class = 'css-reset'>
       <input
-        id = 'UploadForMultiple'
+        id = 'UploadForSingle'
         class = 'css-reset'
-        type = 'file'
-        multiple />
+        type = 'file' />
       <button
         class = 'css-reset'
         type = 'button'
-        @click.prevent = 'UploadForMultiple'>上传
+        @click.prevent = 'UploadForSingle'>上传
       </button>
     </section>
   </article>
@@ -105,20 +104,20 @@ import {
   onMounted,
 } from 'vue';
 
-function UploadForMultiple( event ){
-  const uploadForMultiple = document.querySelector( '#UploadForMultiple' ),
-    files = uploadForMultiple.files;
+function UploadForSingle( event ){
+  const uploadForSingle = document.querySelector( '#UploadForSingle' ),
+    files = uploadForSingle.files;
 
   if( files.length !== 0 ){
-    console.dir( files );
+    const file = files[ 0 ];
+
+    console.dir( file );
 
     const formData = new FormData();
 
-    formData.append( 'uploadType', 'multiple' );
-
-    Array.from( files ).forEach( ( file ) => {
-      formData.append( 'files', file, file.name );
-    } );
+    formData.append( 'uploadType', 'single' );
+    formData.append( 'file', file, file.name );
+    formData.append( 'fileName', `${ file.name }` );
 
     console.dir( formData );
   }
@@ -126,7 +125,7 @@ function UploadForMultiple( event ){
 
 onMounted( () => {
   console.log( `\n\n
-模块提供者：Vue3版本的“UploadForMultiple”的DOM已挂载。
+模块提供者：Vue3版本的“UploadForSingle”的DOM已挂载。
 \n\n` );
 } );
 </script>

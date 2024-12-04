@@ -121,8 +121,8 @@ main {
         </button>
       </section>
     </article>
-    <RemoteUploadForSingleComponent />
-    <RemoteUploadForMultipleComponent />
+    <UploadForSingle />
+    <UploadForMultiple />
   </main>
 </template>
 <script
@@ -131,13 +131,12 @@ main {
 'use strict';
 
 import {
-  defineAsyncComponent,
   reactive,
   onMounted,
 } from 'vue';
 
-const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUploadForMultiple/UploadForSingle' ) );
-const RemoteUploadForMultipleComponent = defineAsyncComponent( () => import( 'RemoteUploadForMultiple/UploadForMultiple' ) );
+import UploadForSingle from './components/UploadForSingle.Vue3.ts.vue';
+import UploadForMultiple from './components/UploadForMultiple.Vue3.ts.vue';
 
 async function UploadForBinary( event ){
   const uploadForBinary = document.querySelector( '#UploadForBinary' ),
@@ -156,7 +155,7 @@ const state = reactive( {
 
 onMounted( () => {
   console.log( `\n\n
-模块使用者：Vue3版本的“文件上传组件”的DOM已挂载。
+模块提供者：Vue3版本的“文件上传组件”的DOM已挂载。
 \n\n` );
 } );
 </script>

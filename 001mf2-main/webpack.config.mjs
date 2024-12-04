@@ -70,6 +70,24 @@ export default {
           'css-loader',
         ],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {},
+          },
+          // Translates CSS into CommonJS
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: [
@@ -197,6 +215,7 @@ export default {
       experiments: {
         federationRuntime: 'hoisted',
       },
+      dts: false,
     } ),
 
     new HtmlWebpackPlugin( {
@@ -209,6 +228,21 @@ export default {
     new VueLoaderPlugin(),
   ],
   devServer: {
+    port: 8100,
+    allowedHosts: 'all',
+    bonjour: true,
+    client: {
+      logging: 'info',
+      overlay: {
+        runtimeErrors: true,
+        errors: true,
+        warnings: false,
+      },
+      progress: true,
+      reconnect: true,
+      webSocketTransport: 'ws',
+    },
+    host: '0.0.0.0',
     devMiddleware: {
       writeToDisk: true,
     },
@@ -216,8 +250,10 @@ export default {
       directory: join( __dirname ),
     },
     compress: true,
-    port: 8100,
+    setupExitSignals: true,
     hot: true,
+    liveReload: false,
+    webSocketServer: 'ws',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
