@@ -109,7 +109,7 @@
   "private": true,
   "engines": {
     "node": ">=23.3.0",
-    "npm": ">=10.9.1"
+    "npm": ">=10.9.2"
   },
   "browserslist": [
     "Chrome >= 131",
@@ -136,7 +136,7 @@
     "sass-loader": "^16.0.4",
     "vue": "^3.5.13",
     "vue-loader": "^17.4.2",
-    "webpack": "^5.97.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   }
