@@ -16,8 +16,8 @@
     "types": {
       "path": "",
       "name": "",
-      "zip": "",
-      "api": ""
+      "zip": "@mf-types.zip",
+      "api": "@mf-types.d.ts"
     },
     "globalName": "Remote_UploadForMultiple",
     "pluginVersion": "0.8.1",

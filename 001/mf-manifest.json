@@ -16,8 +16,8 @@
     "types": {
       "path": "",
       "name": "",
-      "zip": "",
-      "api": ""
+      "zip": ".",
+      "api": "."
     },
     "globalName": "MF2_Main",
     "pluginVersion": "0.8.1",
