@@ -272,10 +272,10 @@ export default {
           abortOnError: true,
           // dts.generateTypes.tsConfigPath > dts.tsConfigPath
           tsConfigPath: join( __dirname, './tsconfig.webpack.json' ),
-          typesFolder: '@mf-types',
-          deleteTypesFolder: false,
+          // typesFolder: '@mf-types',
+          // deleteTypesFolder: false,
           compilerInstance: 'tsc',
-          compiledTypesFolder: '@mf-types',
+          // compiledTypesFolder: '@mf-types',
           // 附加文件到编译中。
           // additionalFilesToCompile: string[]
         },
@@ -293,9 +293,9 @@ export default {
           consumeAPITypes: true,
           maxRetries: 3,
           abortOnError: true,
-          typesFolder: '@mf-types',
-          deleteTypesFolder: false,
-          remoteTypesFolder: '@mf-types',
+          // typesFolder: '@mf-types',
+          // deleteTypesFolder: false,
+          // remoteTypesFolder: '@mf-types',
           // runtimePkgs?: string[],
         },
       },
