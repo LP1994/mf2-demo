@@ -128,9 +128,24 @@ export default {
        * </code>
        */
       /*
-       exposes: {
-       './UploadForMultiple': './src/components/UploadForMultiple.Vue3.ts.vue',
+       exposes: [
+       {
+       './UploadForSingle': {
+       import: [
+       './src/components/UploadForSingle.Vue3.ts.vue',
+       ],
+       // 外露模块的自定义块名称，可选。
+       // name: '',
        },
+       './UploadForMultiple': {
+       import: [
+       './src/components/UploadForMultiple.Vue3.ts.vue',
+       ],
+       // 外露模块的自定义块名称，可选。
+       // name: '',
+       },
+       },
+       ],
        */
       shared: {
         vue: {
