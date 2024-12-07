@@ -131,13 +131,29 @@ main {
 'use strict';
 
 import {
+  sha512,
+} from 'js-sha512';
+
+import {
+  Mime,
+} from 'mime';
+
+import {
   defineAsyncComponent,
   reactive,
   onMounted,
 } from 'vue';
 
-const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUploadForMultiple/UploadForSingle' ) );
-const RemoteUploadForMultipleComponent = defineAsyncComponent( () => import( 'RemoteUploadForMultiple/UploadForMultiple' ) );
+const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUpload/UploadForSingle' ) );
+const RemoteUploadForMultipleComponent = defineAsyncComponent( () => import( 'RemoteUpload/UploadForMultiple' ) );
+
+function FileSRI( data ){
+  return sha512.create().update( data ).hex();
+}
+
+function GetFileMIME( file ){
+  return new Mime().getType( file.name ) ?? 'application/octet-stream';
+}
 
 async function UploadForBinary( event ){
   const uploadForBinary = document.querySelector( '#UploadForBinary' ),
@@ -147,6 +163,50 @@ async function UploadForBinary( event ){
     const file = files[ 0 ];
 
     console.dir( file );
+
+    fetch( `https://localhost:9200/simulation_servers_deno/upload?uploadType=binary&fileName=${ file.name }&isForcedWrite=true`, {
+      body: file.slice(),
+      cache: 'no-cache',
+      headers: {
+        Accept: 'application/json',
+        'content-type': GetFileMIME( file ),
+        'deno-custom-file-sri': `${ FileSRI( new Uint8Array( await file.arrayBuffer() ) ) }`,
+        ...{
+          /**
+           * Cache-Control：https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+           */
+          'Cache-Control': 'no-cache',
+          /**
+           * Access-Control-Request-Headers：https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Headers
+           * 1、浏览器在发出预检请求时使用Access-Control-Request-Headers请求标头，让服务器知道在发出实际请求时客户端可能发送哪些HTTP标头（例如使用setRequestHeader()）。
+           * 2、Access-Control-Allow-Headers的补充服务器端标头将回答此浏览器端标头。
+           * 3、该标头系用于客户端发起的请求中的标头，而不是用于服务器的响应中的标头。
+           */
+          'Access-Control-Request-Headers': 'deno-custom-file-sri, Authorization, Accept, Content-Type, Content-Language, Accept-Language, Cache-Control',
+          /**
+           * Access-Control-Request-Method：https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Request-Method
+           * 1、浏览器在发出预检请求时使用Access-Control-Request-Method请求标头，让服务器知道在发出实际请求时将使用哪种HTTP方法。
+           * 2、这个标头是必需的，因为预检请求始终是一个选项，并且不使用与实际请求相同的方法。
+           * 3、该标头系用于客户端发起的请求中的标头，而不是用于服务器的响应中的标头。
+           */
+          'Access-Control-Request-Method': 'GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH',
+        },
+      },
+      method: 'POST',
+      credentials: 'omit',
+      mode: 'cors',
+    } ).then(
+      async ( res ) => {
+        console.dir( await res.clone().json() );
+
+        return res;
+      },
+      ( reject ) => {
+        console.error( reject );
+      },
+    ).catch( ( error ) => {
+      console.error( error );
+    } );
   }
 }
 

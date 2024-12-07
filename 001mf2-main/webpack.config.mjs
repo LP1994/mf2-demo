@@ -114,7 +114,7 @@ export default {
        * 一般来说，设置了该选项的，就表示其是一个远端模块使用者（也叫做：远端模块消费者之类的）。<br />
        */
       remotes: {
-        RemoteUploadForMultiple: 'Remote_UploadForMultiple@http://localhost:8101/RemoteEntry_UploadForMultiple.js',
+        RemoteUpload: 'Remote_Upload@http://localhost:8101/RemoteEntry_Upload.js',
       },
       /**
        * 远端模块提供者所要导出的各个模块。<br />

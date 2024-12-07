@@ -47,16 +47,16 @@
   ],
   "remotes": [
     {
-      "federationContainerName": "Remote_UploadForMultiple",
+      "federationContainerName": "Remote_Upload",
       "moduleName": "UploadForSingle",
-      "alias": "RemoteUploadForMultiple",
-      "entry": "./002/RemoteEntry_UploadForMultiple.js"
+      "alias": "RemoteUpload",
+      "entry": "./002/RemoteEntry_Upload.js"
     },
     {
-      "federationContainerName": "Remote_UploadForMultiple",
+      "federationContainerName": "Remote_Upload",
       "moduleName": "UploadForMultiple",
-      "alias": "RemoteUploadForMultiple",
-      "entry": "./002/RemoteEntry_UploadForMultiple.js"
+      "alias": "RemoteUpload",
+      "entry": "./002/RemoteEntry_Upload.js"
     }
   ],
   "exposes": []
