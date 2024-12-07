@@ -1,0 +1,63 @@
+{
+  "id": "MF2_Main",
+  "name": "MF2_Main",
+  "metaData": {
+    "name": "MF2_Main",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "mf2-main"
+    },
+    "remoteEntry": {
+      "name": "",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "MF2_Main",
+    "pluginVersion": "0.8.1",
+    "publicPath": "auto",
+    "prefetchInterface": false
+  },
+  "shared": [
+    {
+      "id": "MF2_Main:vue",
+      "name": "vue",
+      "version": "3.5.13",
+      "singleton": true,
+      "requiredVersion": "3.5.13",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "31.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "federationContainerName": "Remote_UploadForMultiple",
+      "moduleName": "UploadForSingle",
+      "alias": "RemoteUploadForMultiple",
+      "entry": "./002/RemoteEntry_UploadForMultiple.js"
+    },
+    {
+      "federationContainerName": "Remote_UploadForMultiple",
+      "moduleName": "UploadForMultiple",
+      "alias": "RemoteUploadForMultiple",
+      "entry": "./002/RemoteEntry_UploadForMultiple.js"
+    }
+  ],
+  "exposes": []
+}

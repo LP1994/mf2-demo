@@ -1,0 +1,76 @@
+{
+  "id": "MF2_Main",
+  "name": "MF2_Main",
+  "metaData": {
+    "name": "MF2_Main",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "mf2-main"
+    },
+    "remoteEntry": {
+      "name": "",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "MF2_Main",
+    "pluginVersion": "0.8.1",
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "3.5.13",
+      "shareScope": "default",
+      "import": "vue",
+      "packageName": "vue",
+      "version": "3.5.13",
+      "strictVersion": true,
+      "eager": false,
+      "name": "vue",
+      "id": "MF2_Main:vue",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "31.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": []
+    }
+  ],
+  "remotes": [
+    {
+      "alias": "RemoteUploadForMultiple",
+      "consumingFederationContainerName": "MF2_Main",
+      "federationContainerName": "Remote_UploadForMultiple",
+      "moduleName": "UploadForSingle",
+      "usedIn": [
+        "node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Upload.Vue3.ts.vue?vue&type=script&setup=true&lang=js"
+      ],
+      "version": "./002/RemoteEntry_UploadForMultiple.js"
+    },
+    {
+      "alias": "RemoteUploadForMultiple",
+      "consumingFederationContainerName": "MF2_Main",
+      "federationContainerName": "Remote_UploadForMultiple",
+      "moduleName": "UploadForMultiple",
+      "usedIn": [
+        "node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Upload.Vue3.ts.vue?vue&type=script&setup=true&lang=js"
+      ],
+      "version": "./002/RemoteEntry_UploadForMultiple.js"
+    }
+  ],
+  "exposes": []
+}

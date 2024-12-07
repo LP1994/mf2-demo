@@ -1,0 +1,93 @@
+{
+  "id": "Remote_UploadForMultiple",
+  "name": "Remote_UploadForMultiple",
+  "metaData": {
+    "name": "Remote_UploadForMultiple",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "upload-for-multiple"
+    },
+    "remoteEntry": {
+      "name": "RemoteEntry_UploadForMultiple.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "Remote_UploadForMultiple",
+    "pluginVersion": "0.8.1",
+    "publicPath": "auto",
+    "prefetchInterface": false
+  },
+  "shared": [
+    {
+      "id": "Remote_UploadForMultiple:vue",
+      "name": "vue",
+      "version": "3.5.13",
+      "singleton": true,
+      "requiredVersion": "3.5.13",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "31.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "Remote_UploadForMultiple:UploadForSingle",
+      "name": "UploadForSingle",
+      "assets": {
+        "js": {
+          "sync": [
+            "__federation_expose_UploadForSingle.js"
+          ],
+          "async": [
+            "31.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "__federation_expose_UploadForSingle.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./UploadForSingle"
+    },
+    {
+      "id": "Remote_UploadForMultiple:UploadForMultiple",
+      "name": "UploadForMultiple",
+      "assets": {
+        "js": {
+          "sync": [
+            "__federation_expose_UploadForMultiple.js"
+          ],
+          "async": [
+            "31.js"
+          ]
+        },
+        "css": {
+          "sync": [
+            "__federation_expose_UploadForMultiple.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./UploadForMultiple"
+    }
+  ]
+}
