@@ -60,16 +60,6 @@
         "node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Upload.Vue3.ts.vue?vue&type=script&setup=true&lang=js"
       ],
       "version": "./002/RemoteEntry_Upload.js"
-    },
-    {
-      "alias": "RemoteUpload",
-      "consumingFederationContainerName": "MF2_Main",
-      "federationContainerName": "Remote_Upload",
-      "moduleName": "UploadForMultiple",
-      "usedIn": [
-        "node_modules/vue-loader/dist/index.js??ruleSet[1].rules[4].use[0]!./src/Upload.Vue3.ts.vue?vue&type=script&setup=true&lang=js"
-      ],
-      "version": "./002/RemoteEntry_Upload.js"
     }
   ],
   "exposes": []

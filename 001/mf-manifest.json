@@ -51,12 +51,6 @@
       "moduleName": "UploadForSingle",
       "alias": "RemoteUpload",
       "entry": "./002/RemoteEntry_Upload.js"
-    },
-    {
-      "federationContainerName": "Remote_Upload",
-      "moduleName": "UploadForMultiple",
-      "alias": "RemoteUpload",
-      "entry": "./002/RemoteEntry_Upload.js"
     }
   ],
   "exposes": []

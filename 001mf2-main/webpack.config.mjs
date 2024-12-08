@@ -20,6 +20,8 @@ import {
   ModuleFederationPlugin,
 } from '@module-federation/enhanced/webpack';
 
+import webpack from 'webpack';
+
 function Get__dirname( import_meta_url = import.meta.url ){
   return dirname( Get__filename( import_meta_url ) );
 }
@@ -91,6 +93,10 @@ export default {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin( {
+      mode: JSON.stringify( 'development' )
+    } ),
+
     new MiniCssExtractPlugin( {
       filename: '[name].css',
     } ),

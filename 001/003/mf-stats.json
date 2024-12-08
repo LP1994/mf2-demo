@@ -1,15 +1,15 @@
 {
-  "id": "Remote_Upload",
-  "name": "Remote_Upload",
+  "id": "Remote_Upload_003",
+  "name": "Remote_Upload_003",
   "metaData": {
-    "name": "Remote_Upload",
+    "name": "Remote_Upload_003",
     "type": "app",
     "buildInfo": {
       "buildVersion": "1.0.0",
       "buildName": "upload-for-multiple"
     },
     "remoteEntry": {
-      "name": "RemoteEntry_Upload.js",
+      "name": "RemoteEntry_Upload_003.js",
       "path": "",
       "type": "global"
     },
@@ -19,7 +19,7 @@
       "zip": "@mf-types.zip",
       "api": "@mf-types.d.ts"
     },
-    "globalName": "Remote_Upload",
+    "globalName": "Remote_Upload_003",
     "pluginVersion": "0.8.1",
     "publicPath": "auto"
   },
@@ -34,7 +34,7 @@
       "strictVersion": true,
       "eager": false,
       "name": "vue",
-      "id": "Remote_Upload:vue",
+      "id": "Remote_Upload_003:vue",
       "assets": {
         "js": {
           "async": [],
@@ -53,15 +53,15 @@
   "remotes": [],
   "exposes": [
     {
-      "path": "./UploadForSingle",
-      "id": "Remote_Upload:UploadForSingle",
-      "name": "UploadForSingle",
+      "path": "./UploadForMultiple",
+      "id": "Remote_Upload_003:UploadForMultiple",
+      "name": "UploadForMultiple",
       "requires": [],
-      "file": "src\\components\\UploadForSingle.Vue3.ts.vue",
+      "file": "src\\components\\UploadForMultiple.Vue3.ts.vue",
       "assets": {
         "js": {
           "sync": [
-            "__federation_expose_UploadForSingle.js"
+            "__federation_expose_UploadForMultiple.js"
           ],
           "async": [
             "31.js"
@@ -69,7 +69,7 @@
         },
         "css": {
           "sync": [
-            "__federation_expose_UploadForSingle.css"
+            "__federation_expose_UploadForMultiple.css"
           ],
           "async": []
         }

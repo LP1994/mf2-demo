@@ -67,27 +67,6 @@
         }
       },
       "path": "./UploadForSingle"
-    },
-    {
-      "id": "Remote_Upload:UploadForMultiple",
-      "name": "UploadForMultiple",
-      "assets": {
-        "js": {
-          "sync": [
-            "__federation_expose_UploadForMultiple.js"
-          ],
-          "async": [
-            "31.js"
-          ]
-        },
-        "css": {
-          "sync": [
-            "__federation_expose_UploadForMultiple.css"
-          ],
-          "async": []
-        }
-      },
-      "path": "./UploadForMultiple"
     }
   ]
 }

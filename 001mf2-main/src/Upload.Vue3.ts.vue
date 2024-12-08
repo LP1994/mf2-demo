@@ -154,7 +154,9 @@ MF_v2_Init( {
   remotes: [
     {
       name: 'Remote_Upload_003',
-      entry: 'http://localhost:8102/RemoteEntry_Upload_003.js',
+      entry: mode === 'development'
+             ? 'http://localhost:8102/RemoteEntry_Upload_003.js'
+             : './003/RemoteEntry_Upload_003.js',
       alias: 'Remote_Upload_Multiple',
     }
   ],
