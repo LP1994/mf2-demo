@@ -47,10 +47,10 @@
   ],
   "remotes": [
     {
-      "federationContainerName": "Remote_Upload",
+      "federationContainerName": "Remote_UploadForSingle",
       "moduleName": "UploadForSingle",
-      "alias": "RemoteUpload",
-      "entry": "./002/RemoteEntry_Upload.js"
+      "alias": "RemoteUploadForSingle",
+      "entry": "./002/RemoteEntry_UploadForSingle.js"
     }
   ],
   "exposes": []

@@ -150,20 +150,20 @@ import {
 } from 'vue';
 
 MF_v2_Init( {
-  name: 'MF2_Main_002',
+  name: 'MF2_Main_Upload',
   remotes: [
     {
-      name: 'Remote_Upload_003',
+      name: 'Remote_UploadForMultiple',
       entry: mode === 'development'
-             ? 'http://localhost:8102/RemoteEntry_Upload_003.js'
-             : './003/RemoteEntry_Upload_003.js',
-      alias: 'Remote_Upload_Multiple',
+             ? 'http://localhost:8102/RemoteEntry_UploadForMultiple.js'
+             : './003/RemoteEntry_UploadForMultiple.js',
+      alias: 'RemoteUploadForMultiple',
     }
   ],
 } );
 
-const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUpload/UploadForSingle' ) );
-const RemoteUploadForMultipleComponent = defineAsyncComponent( () => MF_v2_LoadRemote( 'Remote_Upload_Multiple/UploadForMultiple' ) );
+const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUploadForSingle/UploadForSingle' ) );
+const RemoteUploadForMultipleComponent = defineAsyncComponent( () => MF_v2_LoadRemote( 'RemoteUploadForMultiple/UploadForMultiple' ) );
 
 function FileSRI( data ){
   return sha512.create().update( data ).hex();
