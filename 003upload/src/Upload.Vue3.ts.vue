@@ -121,8 +121,7 @@ main {
         </button>
       </section>
     </article>
-    <RemoteUploadForSingleComponent />
-    <RemoteUploadForMultipleComponent />
+    <UploadForMultiple />
   </main>
 </template>
 <script
@@ -139,29 +138,11 @@ import {
 } from 'mime';
 
 import {
-  init as MF_v2_Init,
-  loadRemote as MF_v2_LoadRemote,
-} from '@module-federation/enhanced/runtime';
-
-import {
-  defineAsyncComponent,
   reactive,
   onMounted,
 } from 'vue';
 
-MF_v2_Init( {
-  name: 'MF2_Main_002',
-  remotes: [
-    {
-      name: 'Remote_Upload_003',
-      entry: 'http://localhost:8102/RemoteEntry_Upload_003.js',
-      alias: 'Remote_Upload_Multiple',
-    }
-  ],
-} );
-
-const RemoteUploadForSingleComponent = defineAsyncComponent( () => import( 'RemoteUpload/UploadForSingle' ) );
-const RemoteUploadForMultipleComponent = defineAsyncComponent( () => MF_v2_LoadRemote( 'Remote_Upload_Multiple/UploadForMultiple' ) );
+import UploadForMultiple from './components/UploadForMultiple.Vue3.ts.vue';
 
 function FileSRI( data ){
   return sha512.create().update( data ).hex();
@@ -232,7 +213,7 @@ const state = reactive( {
 
 onMounted( () => {
   console.log( `\n\n
-模块使用者：Vue3版本的“文件上传组件”的DOM已挂载。
+模块提供者：Vue3版本的“文件上传组件”的DOM已挂载。
 \n\n` );
 } );
 </script>

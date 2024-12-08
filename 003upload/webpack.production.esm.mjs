@@ -31,11 +31,9 @@ function Get__filename( import_meta_url = import.meta.url ){
 const __dirname = Get__dirname( import.meta.url );
 
 export default {
-  mode: 'development',
-  cache: false,
-  devtool: 'source-map',
+  mode: 'production',
   optimization: {
-    minimize: false,
+    minimize: true,
   },
   target: [
     'web',
@@ -101,7 +99,7 @@ export default {
        * 1、模块联盟使用该名称进行运行时数据检索和全局块存储变量引用。<br />
        * 2、提供端、使用端都得设置该参数！<br />
        */
-      name: 'Remote_Upload',
+      name: 'Remote_Upload_003',
       /**
        * 远端模块提供者生成的remoteEntry的文件名。非必须。<br />
        * 1、默认值：'remoteEntry.js'。<br />
@@ -109,13 +107,13 @@ export default {
        * 例如，可以设置为：'mf-js/RemoteEntry_UploadForMultiple.js'，表示生成的JS文件路径会是：'${ output.path }/mf-js/RemoteEntry_UploadForMultiple.js'。<br />
        * 3、一般来说，设置了该选项的，就表示其是一个远端模块提供者（也叫做：远端模块分享者之类的，当然远端模块提供者也是可以使用（消费）其他的远端模块提供者提供的远端模块）。<br />
        */
-      filename: 'RemoteEntry_Upload.js',
+      filename: 'RemoteEntry_Upload_003.js',
       /**
        * 一般来说，设置了该选项的，就表示其是一个远端模块使用者（也叫做：远端模块消费者之类的）。<br />
        */
       /*
        remotes: {
-       RemoteUploadForMultiple: 'Remote_UploadForMultiple@http://localhost:8101/RemoteEntry_UploadForMultiple.js',
+       RemoteUploadForMultiple: 'Remote_UploadForMultiple@./002/RemoteEntry_UploadForMultiple.js',
        },
        */
       /**
@@ -131,14 +129,15 @@ export default {
        */
       exposes: [
         {
-          './UploadForSingle': {
-            import: [
-              './src/components/UploadForSingle.Vue3.ts.vue',
-            ],
-            // 外露模块的自定义块名称，可选。
-            // name: '',
-          },
           /*
+           './UploadForSingle': {
+           import: [
+           './src/components/UploadForSingle.Vue3.ts.vue',
+           ],
+           // 外露模块的自定义块名称，可选。
+           // name: '',
+           },
+           */
           './UploadForMultiple': {
             import: [
               './src/components/UploadForMultiple.Vue3.ts.vue',
@@ -146,7 +145,6 @@ export default {
             // 外露模块的自定义块名称，可选。
             // name: '',
           },
-          */
         },
       ],
       shared: {
@@ -312,37 +310,4 @@ export default {
 
     new VueLoaderPlugin(),
   ],
-  devServer: {
-    port: 8101,
-    allowedHosts: 'all',
-    bonjour: true,
-    client: {
-      logging: 'info',
-      overlay: {
-        runtimeErrors: true,
-        errors: true,
-        warnings: false,
-      },
-      progress: true,
-      reconnect: true,
-      webSocketTransport: 'ws',
-    },
-    host: '0.0.0.0',
-    devMiddleware: {
-      writeToDisk: true,
-    },
-    static: {
-      directory: join( __dirname ),
-    },
-    compress: true,
-    setupExitSignals: true,
-    hot: true,
-    liveReload: false,
-    webSocketServer: 'ws',
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
-    },
-  },
 };
