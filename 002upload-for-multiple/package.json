@@ -108,7 +108,7 @@
   ],
   "private": true,
   "engines": {
-    "node": ">=23.3.0",
+    "node": ">=23.4.0",
     "npm": ">=10.9.2"
   },
   "browserslist": [
@@ -127,7 +127,7 @@
     "production": "webpack --color --profile --mode production --define-process-env-node-env production --config ./webpack.production.esm.mjs"
   },
   "devDependencies": {
-    "@module-federation/enhanced": "^0.8.1",
+    "@module-federation/enhanced": "^0.8.2",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
