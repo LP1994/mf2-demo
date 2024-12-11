@@ -2,10 +2,10 @@
 
 /.idea/
 
-/001mf2-main/dist/
-/002upload-for-multiple/dist/
-/003upload/dist/
+/001mf_v2-main/dist/
+/002upload-for-single/dist/
+/003upload-for-multiple/dist/
 
-/001mf2-main/node_modules/
-/002upload-for-multiple/node_modules/
-/003upload/node_modules/
+/001mf_v2-main/node_modules/
+/002upload-for-single/node_modules/
+/003upload-for-multiple/node_modules/
