@@ -127,7 +127,7 @@
     "production": "webpack --color --profile --mode production --config-node-env production --config ./webpack.production.esm.mjs"
   },
   "devDependencies": {
-    "@module-federation/enhanced": "^0.8.6",
+    "@module-federation/enhanced": "^0.8.7",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
