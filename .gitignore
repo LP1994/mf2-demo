@@ -1,6 +1,6 @@
 # 项目排除路径
 
-/.idea/
+# /.idea/
 
 /001mf_v2-main/dist/
 /002upload-for-single/dist/
