@@ -108,7 +108,7 @@
   ],
   "private": true,
   "engines": {
-    "node": ">=23.5.0",
+    "node": ">=23.6.0",
     "npm": ">=11.0.0"
   },
   "browserslist": [
@@ -127,7 +127,11 @@
     "production": "webpack --color --profile --mode production --config-node-env production --config ./webpack.production.esm.mjs"
   },
   "devDependencies": {
-    "@module-federation/enhanced": "^0.8.7",
+    "@module-federation/bridge-react": "^0.8.8",
+    "@module-federation/bridge-vue3": "^0.8.8",
+    "@module-federation/enhanced": "^0.8.8",
+    "@module-federation/rsbuild-plugin": "^0.8.8",
+    "@module-federation/vite": "^1.2.1",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
