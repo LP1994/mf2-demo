@@ -112,15 +112,15 @@
     "npm": ">=11.0.0"
   },
   "browserslist": [
-    "Chrome >= 131",
-    "Android >= 131",
-    "ChromeAndroid >= 131",
-    "Edge >= 131",
-    "Firefox >= 133",
-    "FirefoxAndroid >= 133",
+    "Chrome >= 132",
+    "Android >= 132",
+    "ChromeAndroid >= 132",
+    "Edge >= 132",
+    "Firefox >= 134",
+    "FirefoxAndroid >= 134",
     "Safari >= 18",
     "iOS >= 18",
-    "Opera >= 115"
+    "Opera >= 116"
   ],
   "scripts": {
     "dev": "webpack serve --color --profile --mode development --config-node-env development --config ./webpack.config.mjs",
